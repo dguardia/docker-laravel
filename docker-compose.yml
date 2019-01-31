@@ -5,7 +5,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: .deploy/Dockerfile
+      dockerfile: ./deploy/Dockerfile
     image: digitalocean.com/php
     container_name: app
     restart: unless-stopped
@@ -45,7 +45,7 @@ services:
       - "3306:3306"
     environment:
       MYSQL_DATABASE: laravel
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: laravelroot
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:

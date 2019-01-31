@@ -81,7 +81,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                <img style="width: 100px" src="https://cdn-images-1.medium.com/max/1600/1*lUNmBw_oyS2ADWqZs4DLOA.png" alt="Docker"> Docker + Laravel <img style="width: 100px" src="https://upload.wikimedia.org/wikipedia/commons/3/3d/LaravelLogo.png" alt="Laravel">
+                </div>
+                <div class="row">
+                <p class="lead text-center">Custom build of Laravel to work with Docker <br> by David</p>
                 </div>
 
                 <div class="links">
