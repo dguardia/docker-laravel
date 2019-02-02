@@ -2,16 +2,16 @@ version: '3'
 services:
 
   #PHP Service
-  app:
+  web:
     build:
       context: .
-      dockerfile: ./deploy/Dockerfile
-    image: digitalocean.com/php
-    container_name: app
+      dockerfile: ./web/Dockerfile
+    image: davidguardia.com/php
+    container_name: web
     restart: unless-stopped
     tty: true
     environment:
-      SERVICE_NAME: app
+      SERVICE_NAME: web
       SERVICE_TAGS: dev
     working_dir: /var/www
     volumes:
