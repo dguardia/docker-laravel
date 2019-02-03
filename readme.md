@@ -62,7 +62,7 @@ You can now modify the .env file on the app container to include specific detail
 Open the file using docker-compose exec, which allows you to run specific commands in containers. In this case, you are opening the file for editing:
 
 ```bash
-$ docker-compose exec app nano .env
+$ docker-compose exec web nano .env
 
 ```
 
@@ -80,7 +80,7 @@ DB_PASSWORD=secret
 
 Next, set the application key for the Laravel application with the php artisan key:generate command. This command will generate a key and copy it to your .env file, ensuring that your user sessions and encrypted data remain secure:
 ```bash
-$ docker-compose exec app php artisan key:generate
+$ docker-compose exec web php artisan key:generate
 
 ```
 
@@ -89,7 +89,7 @@ $ docker-compose exec app php artisan key:generate
 You now have the environment settings required to run your application. To cache these settings into a file, which will boost your application's load speed, run:
 
 ```bash
-$ docker-compose exec app php artisan config:cache
+$ docker-compose exec web php artisan config:cache
 
 ```
 
@@ -159,7 +159,7 @@ Step 10 — Migrating Data and Working with the Tinker Console
 First, test the connection to MySQL by running the Laravel artisan migrate command, which creates a migrations table in the database from inside the container:
 
 ```bash
-$ docker-compose exec app php artisan migrate
+$ docker-compose exec web php artisan migrate
 ```
 This command will migrate the default Laravel tables. The output confirming the migration will look like this:
 
@@ -175,7 +175,7 @@ Migrated:  2014_10_12_100000_create_password_resets_table
 Once the migration is complete, you can run a query to check if you are properly connected to the database using the tinker command:
 
 ```bash
-$ docker-compose exec app php artisan tinker
+$ docker-compose exec web php artisan tinker
 ```
 ```bash
 #Psy Shell v0.9.9 (PHP 7.2.14 — cli) by Justin Hileman
