@@ -18,7 +18,7 @@ services:
       - ./:/var/www
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
-      - app-network
+      - laranet
 
   #Nginx Service
   webserver:
@@ -33,7 +33,7 @@ services:
       - ./:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     networks:
-      - app-network
+      - laranet
 
   #MySQL Service
   db:
@@ -52,13 +52,22 @@ services:
       - dbdata:/var/lib/mysql/
       - ./mysql/my.cnf:/etc/mysql/my.cnf
     networks:
-      - app-network
+      - laranet
+  redis:
+    container_name: redis
+    image: redis:alpine
+    volumes:
+      - redisdata:/data
+    networks:
+      - laranet
 
 #Docker Networks
 networks:
-  app-network:
-    driver: bridge
+  laranet:
+    driver: "bridge"
 #Volumes
 volumes:
   dbdata:
-    driver: local
+    driver: "local"
+  redisdata:
+    driver: "local"
