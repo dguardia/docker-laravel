@@ -92,6 +92,15 @@ You now have the environment settings required to run your application. To cache
 $ docker-compose exec web php artisan config:cache
 
 ```
+### Step 8a
+
+run the yarn in the disposable container
+
+```bash
+$ docker run --rm -it -v $(pwd):/app -w /app node yarn
+
+$ docker run --rm -it -v $(pwd):/app -w /app node yarn dev
+```
 
 Your configuration settings will be loaded into /var/www/bootstrap/cache/config.php on the container.
 

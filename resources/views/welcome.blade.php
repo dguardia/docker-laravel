@@ -17,58 +17,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-    html, body {
-  background-color: red;
-  color: #636b6f;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 200;
-  height: 100vh;
-  margin: 0;
-}
-
-.full-height {
-  height: 100vh;
-}
-
-.flex-center {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.position-ref {
-  position: relative;
-}
-
-.top-right {
-  position: absolute;
-  right: 10px;
-  top: 18px;
-}
-
-.content {
-  text-align: center;
-}
-
-.title {
-  font-size: 84px;
-}
-
-.links > a {
-  color: #636b6f;
-  padding: 0 25px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: .1rem;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.m-b-md {
-  margin-bottom: 30px;
-}
-    </style>
 
     </head>
     <body>
@@ -89,10 +37,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                <img style="width: 100px" src="https://cdn-images-1.medium.com/max/1600/1*lUNmBw_oyS2ADWqZs4DLOA.png" alt="Docker"> Docker + Laravel <img style="width: 100px" src="https://upload.wikimedia.org/wikipedia/commons/3/3d/LaravelLogo.png" alt="Laravel">
-                </div>
-                <div class="row">
-                <p class="lead text-center">Custom build of Laravel to work with Docker <br> by David Guardia</p>
+                    <img style="width: 100px" src="https://cdn-images-1.medium.com/max/1600/1*lUNmBw_oyS2ADWqZs4DLOA.png" alt="Docker"> Docker + Laravel <img style="width: 100px" src="https://upload.wikimedia.org/wikipedia/commons/3/3d/LaravelLogo.png" alt="Laravel">
+                    <p class="lead">Custom build of Laravel to work with Docker <br> by David Guardia</p>
                 </div>
 
                 <div class="links">
@@ -109,5 +55,11 @@
         <!-- js -->
         <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @if (getenv('APP_ENV') === 'local')
+    <script id="__bs_script__">//<![CDATA[
+        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.6'><\/script>".replace("HOST", location.hostname));
+        //]]>
+    </script>
+    @endif
     </body>
 </html>

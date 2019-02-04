@@ -34,7 +34,7 @@ services:
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - laranet
-
+    
   #MySQL Service
   db:
     image: mariadb:latest

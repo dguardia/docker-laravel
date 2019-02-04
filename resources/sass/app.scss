@@ -9,7 +9,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 html, body {
-  background-color: red;
+  background-color: #ffffff;
   color: #636b6f;
   font-family: 'Nunito', sans-serif;
   font-weight: 200;
@@ -39,6 +39,9 @@ html, body {
 
 .content {
   text-align: center;
+  p {
+    text-align: center;
+  }
 }
 
 .title {

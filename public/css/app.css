@@ -10493,7 +10493,7 @@ a.text-dark:focus {
 
 html,
 body {
-  background-color: red;
+  background-color: #ffffff;
   color: #636b6f;
   font-family: "Nunito", sans-serif;
   font-weight: 200;
@@ -10522,6 +10522,10 @@ body {
 }
 
 .content {
+  text-align: center;
+}
+
+.content p {
   text-align: center;
 }
 
